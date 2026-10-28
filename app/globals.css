@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f5f3ef;
+  --foreground: #111827;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(86, 127, 224, 0.17), transparent 30%),
+    linear-gradient(180deg, #f7f4ef 0%, #f3f6fb 28%, #f7f4ee 100%);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes rail-scroll-left {
+  from {
+    transform: translate3d(-8%, 0, 0);
+  }
+  to {
+    transform: translate3d(-66%, 0, 0);
+  }
+}
+
+@keyframes rail-scroll-right {
+  from {
+    transform: translate3d(-66%, 0, 0);
+  }
+  to {
+    transform: translate3d(-8%, 0, 0);
+  }
+}
+
+.rail-track {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.rail-track-left {
+  animation: rail-scroll-left linear infinite;
+}
+
+.rail-track-right {
+  animation: rail-scroll-right linear infinite;
+}
+
+.hero-grid {
+  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
